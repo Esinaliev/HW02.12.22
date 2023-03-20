@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 namespace HW02._12._22
@@ -14,7 +15,18 @@ namespace HW02._12._22
             int x;
             x = int.Parse(Console.ReadLine());
             double result = MySqrt(x);
-            Console.WriteLine(result);
+            Console.WriteLine("Result:" + result);
+
+            Console.WriteLine("<--------- Assembly info --------->");
+            Console.WriteLine();
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (Assembly assembly in assemblies)
+            {
+                Console.WriteLine(assembly.FullName);
+            }
+
+            Console.ReadLine();
+            Console.WriteLine("Hello World!");
         }
     }
 }
